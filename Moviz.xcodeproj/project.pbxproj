@@ -15,6 +15,9 @@
 		BAFE65B02B27566E00AAC314 /* movizData.json in Resources */ = {isa = PBXBuildFile; fileRef = BAFE65AF2B27566D00AAC314 /* movizData.json */; };
 		BAFE65B22B2756C000AAC314 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65B12B2756C000AAC314 /* Movie.swift */; };
 		BAFE65B42B275CF500AAC314 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65B32B275CF500AAC314 /* ModelData.swift */; };
+		BAFE65B82B275E1A00AAC314 /* MovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65B72B275E1A00AAC314 /* MovieRow.swift */; };
+		BAFE65BB2B2770B600AAC314 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = BAFE65BA2B2770B600AAC314 /* URLImage */; };
+		BAFE65BD2B2770B600AAC314 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = BAFE65BC2B2770B600AAC314 /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,7 @@
 		BAFE65AF2B27566D00AAC314 /* movizData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movizData.json; sourceTree = "<group>"; };
 		BAFE65B12B2756C000AAC314 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		BAFE65B32B275CF500AAC314 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		BAFE65B72B275E1A00AAC314 /* MovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFE65BD2B2770B600AAC314 /* URLImageStore in Frameworks */,
+				BAFE65BB2B2770B600AAC314 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +86,7 @@
 		BAFE65AE2B27566D00AAC314 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BAFE65B32B275CF500AAC314 /* ModelData.swift */,
+				BAFE65AF2B27566D00AAC314 /* movizData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -90,6 +96,7 @@
 			children = (
 				BAFE65A02B27474100AAC314 /* ContentView.swift */,
 				BAFE65AC2B274F7800AAC314 /* rectangleImage.swift */,
+				BAFE65B72B275E1A00AAC314 /* MovieRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -97,7 +104,7 @@
 		BAFE65B62B275D6A00AAC314 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BAFE65AF2B27566D00AAC314 /* movizData.json */,
+				BAFE65B32B275CF500AAC314 /* ModelData.swift */,
 				BAFE65B12B2756C000AAC314 /* Movie.swift */,
 			);
 			path = Model;
@@ -119,6 +126,10 @@
 			dependencies = (
 			);
 			name = Moviz;
+			packageProductDependencies = (
+				BAFE65BA2B2770B600AAC314 /* URLImage */,
+				BAFE65BC2B2770B600AAC314 /* URLImageStore */,
+			);
 			productName = Moviz;
 			productReference = BAFE659B2B27474100AAC314 /* Moviz.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +158,9 @@
 				Base,
 			);
 			mainGroup = BAFE65922B27474100AAC314;
+			packageReferences = (
+				BAFE65B92B2770B600AAC314 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = BAFE659C2B27474100AAC314 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -175,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */,
+				BAFE65B82B275E1A00AAC314 /* MovieRow.swift in Sources */,
 				BAFE65AD2B274F7800AAC314 /* rectangleImage.swift in Sources */,
 				BAFE65B42B275CF500AAC314 /* ModelData.swift in Sources */,
 				BAFE65B22B2756C000AAC314 /* Movie.swift in Sources */,
@@ -377,6 +392,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAFE65B92B2770B600AAC314 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAFE65BA2B2770B600AAC314 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAFE65B92B2770B600AAC314 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		BAFE65BC2B2770B600AAC314 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAFE65B92B2770B600AAC314 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BAFE65932B27474100AAC314 /* Project object */;
 }

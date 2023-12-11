@@ -15,6 +15,7 @@ struct Movie: Hashable, Codable {
     var schedule: Schedule
     var rating: Rating
     var summary: String
+    var image: ImageURL
 
     struct Schedule: Codable, Hashable {
         var time: String
@@ -22,11 +23,11 @@ struct Movie: Hashable, Codable {
     }
 
     struct Rating: Codable, Hashable {
-        var average: Double
+        var average: Double?
     }
 
-    private var imageName: String
-    var image: Image {
-        Image(imageName)
+    struct ImageURL: Codable, Hashable {
+        var medium: String
+        var original: String
     }
 }

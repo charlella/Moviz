@@ -7,7 +7,11 @@
 
 import Foundation
 
-var movies: [Movie] = load("movizData.json")
+class ModelData: ObservableObject {
+    @Published var movies: [Movie] = load("movizData.json")
+    
+}
+
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -30,6 +34,7 @@ func load<T: Decodable>(_ filename: String) -> T {
         let decoder = JSONDecoder()
         return try decoder.decode(T.self, from: data)
     } catch {
+        print("Error decoding \(filename): \(error)")
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
