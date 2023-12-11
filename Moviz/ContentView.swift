@@ -9,11 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
+        VStack(alignment: .leading) {
+            /*Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+                .foregroundColor(.accentColor)*/
+            Text("Under the Dome")
+                .font(.title)
+            HStack {
+                Text("Drama, Science-Fiction, Thriller")
+                    .font(.subheadline)
+                Spacer()
+                Text("CBS")
+                    .font(.subheadline)
+            }
         }
         .padding()
     }

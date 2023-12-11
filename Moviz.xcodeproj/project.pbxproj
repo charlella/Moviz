@@ -11,6 +11,7 @@
 		BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65A02B27474100AAC314 /* ContentView.swift */; };
 		BAFE65A32B27474300AAC314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFE65A22B27474300AAC314 /* Assets.xcassets */; };
 		BAFE65A62B27474300AAC314 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFE65A52B27474300AAC314 /* Preview Assets.xcassets */; };
+		BAFE65AD2B274F7800AAC314 /* rectangleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65AC2B274F7800AAC314 /* rectangleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BAFE65A02B27474100AAC314 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BAFE65A22B27474300AAC314 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAFE65A52B27474300AAC314 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAFE65AC2B274F7800AAC314 /* rectangleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rectangleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BAFE659E2B27474100AAC314 /* MovizApp.swift */,
 				BAFE65A02B27474100AAC314 /* ContentView.swift */,
+				BAFE65AC2B274F7800AAC314 /* rectangleImage.swift */,
 				BAFE65A22B27474300AAC314 /* Assets.xcassets */,
 				BAFE65A42B27474300AAC314 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */,
+				BAFE65AD2B274F7800AAC314 /* rectangleImage.swift in Sources */,
 				BAFE659F2B27474100AAC314 /* MovizApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
