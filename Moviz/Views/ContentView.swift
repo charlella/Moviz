@@ -11,7 +11,7 @@ struct ContentView: View {
     var movies: [Movie]
 
     var body: some View {
-           NavigationView {
+//           NavigationView {
                NavigationSplitView {
                    List(movies) { movie in
                        NavigationLink {
@@ -24,7 +24,7 @@ struct ContentView: View {
                } detail: {
                    Text("Select a Movie")
                }
-           }
+//           }
        }
    }
 
