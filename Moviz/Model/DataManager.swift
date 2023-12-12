@@ -9,7 +9,24 @@ import Foundation
 
 class DataManager: ObservableObject {
     @Published var movies: [Movie] = []
+    @Published var favoriteMovieIDs: Set<Int> = []
 
+    func toggleFavorite(movie: Movie) {
+            if favoriteMovieIDs.contains(movie.id) {
+                favoriteMovieIDs.remove(movie.id)
+            } else {
+                favoriteMovieIDs.insert(movie.id)
+            }
+        }
+    
+    func isFavorite(movie: Movie) -> Bool {
+           return favoriteMovieIDs.contains(movie.id)
+       }
+    
+    var favoriteMovies: [Movie] {
+            return movies.filter { favoriteMovieIDs.contains($0.id) }
+        }
+    
     func fetchMovies(completion: @escaping ([Movie]?) -> Void) {
         guard let url = URL(string: "https://api.tvmaze.com/shows") else {
             completion(nil)

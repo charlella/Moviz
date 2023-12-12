@@ -36,6 +36,11 @@ struct MovieRow: View {
                             .foregroundStyle(.secondary)
                     }
                     Spacer()
+                    if dataManager.isFavorite(movie: movie) {
+                                       Image(systemName: "heart.fill")
+                                           .foregroundColor(.red)
+                                           .padding(.trailing, 10)
+                                   }
                 }
             }
         }

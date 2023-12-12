@@ -9,6 +9,7 @@ import SwiftUI
 import URLImage
 
 struct MovieDetail: View {
+    @EnvironmentObject var dataManager: DataManager
     var movie: Movie
     
     var body: some View {
@@ -55,7 +56,13 @@ struct MovieDetail: View {
                     .font(.body)
             }
             .padding()
+            Image(systemName: dataManager.isFavorite(movie: movie) ? "heart.fill" : "heart")
+                        .foregroundColor(dataManager.isFavorite(movie: movie) ? .red : .gray)
+                        .padding(.trailing, 10)
         }
+        .onTapGesture {
+                  dataManager.toggleFavorite(movie: movie)
+              }
     }
 }
 
@@ -64,5 +71,6 @@ struct MovieDetail_Previews: PreviewProvider {
         let dataManager = DataManager()
         dataManager.movies = ModelData().movies
         return MovieDetail(movie: dataManager.movies[0])
+            .environmentObject(DataManager())
     }
 }
