@@ -17,10 +17,10 @@ struct MovieRow: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 130)
-                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        .frame(width: 95, height: 130)
+                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
                         .overlay(
-                            RoundedRectangle(cornerRadius: 25.0)
+                            RoundedRectangle(cornerRadius: 20.0)
                         .stroke(Color.white, lineWidth: 4)
                                    )
                         .shadow(radius: 7)
