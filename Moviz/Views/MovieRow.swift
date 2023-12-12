@@ -14,15 +14,22 @@ struct MovieRow: View {
     var body: some View {
         HStack {
             URLImage(URL(string: movie.image.medium)!) { image in
-                           image
-                               .resizable()
-                               .aspectRatio(contentMode: .fit)
-                               .frame(width: 100, height: 100)
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 130)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        .stroke(Color.white, lineWidth: 4)
+                                   )
+                        .shadow(radius: 7)
                        }
+            Spacer()
             VStack(alignment: .leading)  {
                 Text(movie.name)
                     .font(.title3.bold())
-                Text(movie.genres.joined())
+                Text(movie.genres.joined(separator: ", "))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
