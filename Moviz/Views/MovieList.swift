@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct MovieList: View {
-    var movies: [Movie]
+    @EnvironmentObject var dataManager: DataManager
 
     var body: some View {
-        List(movies) { movie in
-                   MovieRow(movie: movie)
-               }
+        List(dataManager.movies) { movie in
+            MovieRow(movie: movie)
+        }
     }
 }
 
 struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
-        let movies = ModelData().movies
-        return MovieList(movies: movies)
-           }
-       }
-   
+        let dataManager = DataManager()
+        dataManager.movies = ModelData().movies
+
+        return Group {
+            MovieList()
+                .environmentObject(dataManager)
+        }
+    }
+}

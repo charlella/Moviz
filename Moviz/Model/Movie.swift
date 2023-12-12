@@ -17,6 +17,13 @@ struct Movie: Hashable, Codable, Identifiable {
     var summary: String
     var image: ImageURL
     var network: Network?
+    
+    var premiered: String
+    var ended: String?
+    var officialSite: String?
+    var runtime: Int?
+    var averageRuntime: Int
+    var status: String
 
     struct Schedule: Codable, Hashable {
         var time: String

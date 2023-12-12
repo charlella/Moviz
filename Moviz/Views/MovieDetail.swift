@@ -40,7 +40,7 @@ struct MovieDetail: View {
                 HStack {
                     Text("\(movie.schedule.days.joined(separator: ", ")) (\(movie.schedule.time))")
                     Spacer()
-                    Text(movie.network!.name)
+                    Text(movie.network?.name ?? "")
                 }
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -61,7 +61,8 @@ struct MovieDetail: View {
 
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        let movies = ModelData().movies
-        MovieDetail(movie: movies[0])
+        let dataManager = DataManager()
+        dataManager.movies = ModelData().movies
+        return MovieDetail(movie: dataManager.movies[0])
     }
 }

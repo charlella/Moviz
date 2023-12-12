@@ -8,30 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    var movies: [Movie]
+    @StateObject private var dataManager = DataManager()
 
     var body: some View {
-//           NavigationView {
-               NavigationSplitView {
-                   List(movies) { movie in
-                       NavigationLink {
-                           MovieDetail(movie: movie)
-                       } label: {
-                           MovieRow(movie: movie)
-                       }
-                   }
-                   .navigationTitle("Movies")
-               } detail: {
-                   Text("Select a Movie")
-               }
-//           }
-       }
-   }
+        NavigationSplitView {
+             List(dataManager.movies) { movie in
+                 NavigationLink(
+                     destination: MovieDetail(movie: movie),
+                     label: {
+                         MovieRow(movie: movie)
+                     }
+                 )
+             }
+             .navigationTitle("Movies")
+         } detail: {
+             Text("Select a Movie")
+         }
+         .onAppear {
+             loadData()
+         }
+     }
+
+     private func loadData() {
+         dataManager.fetchMovies { _ in }
+     }
+ }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let movies = ModelData().movies
-        return ContentView(movies: movies)
+        ContentView()
     }
 }
 
