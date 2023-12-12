@@ -17,10 +17,15 @@ struct MovieRow: View {
                            image
                                .resizable()
                                .aspectRatio(contentMode: .fit)
-                               .frame(width: 50, height: 50)
+                               .frame(width: 100, height: 100)
                        }
-            Text(movie.name)
-            
+            VStack(alignment: .leading)  {
+                Text(movie.name)
+                    .font(.title3.bold())
+                Text(movie.genres.joined())
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
             Spacer()
             
         }
@@ -29,10 +34,9 @@ struct MovieRow: View {
 
 struct MovieRow_Previews: PreviewProvider {
     static var previews: some View {
-        let movies = ModelData().movies
-        return Group {
-            MovieRow(movie: movies[0])
-            MovieRow(movie: movies[1])
-        }
-    }
-}
+           let movies = ModelData().movies
+           return List(movies) { movie in
+               MovieRow(movie: movie)
+           }
+       }
+   }
