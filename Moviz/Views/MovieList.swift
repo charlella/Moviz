@@ -11,17 +11,16 @@ struct MovieList: View {
     var movies: [Movie]
 
     var body: some View {
-        ForEach(movies) { movie in
-            MovieRow(movie: movie)
-        }
+        List(movies) { movie in
+                   MovieRow(movie: movie)
+               }
     }
 }
 
 struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
-           let movies = ModelData().movies
-           return List(movies) { movie in
-               MovieRow(movie: movie)
+        let movies = ModelData().movies
+        return MovieList(movies: movies)
            }
        }
-   }
+   

@@ -16,6 +16,7 @@ struct Movie: Hashable, Codable, Identifiable {
     var rating: Rating
     var summary: String
     var image: ImageURL
+    var network: Network?
 
     struct Schedule: Codable, Hashable {
         var time: String
@@ -30,4 +31,16 @@ struct Movie: Hashable, Codable, Identifiable {
         var medium: String
         var original: String
     }
+    struct Network: Codable, Hashable {
+           var id: Int
+           var name: String
+           var country: Country
+           var officialSite: String?
+
+           struct Country: Codable, Hashable {
+               var name: String
+               var code: String
+               var timezone: String
+           }
+       }
 }

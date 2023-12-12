@@ -13,7 +13,7 @@ struct MovizApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(movies: modelData.movies)
                 .environmentObject(modelData)
         }
     }

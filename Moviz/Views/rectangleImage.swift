@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct rectangleImage: View {
-    var body: some View {
-        Image("underTheDome")
+struct RectangleImage: ViewModifier {
+    func body(content: Content) -> some View {
+        content
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             .overlay(
                 RoundedRectangle(cornerRadius: 25.0)
                     .stroke(Color.white, lineWidth: 4)
-                )
+            )
             .shadow(radius: 7)
     }
 }
 
-struct rectangleImage_Previews: PreviewProvider {
-    static var previews: some View {
-        rectangleImage()
+extension View {
+    func rectangleImageStyle() -> some View {
+        self.modifier(RectangleImage())
     }
 }
