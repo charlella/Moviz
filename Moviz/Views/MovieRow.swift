@@ -46,9 +46,10 @@ struct MovieRow: View {
             let dataManager = DataManager()
             dataManager.movies = ModelData().movies
 
+
             return Group {
                 MovieRow(movie: dataManager.movies[0])
-                    .environmentObject(dataManager)
+                    .environmentObject(DataManager())
             }
         }
     }

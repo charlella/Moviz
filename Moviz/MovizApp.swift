@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct MovizApp: App {
-    @StateObject private var modelData = DataManager()
+    @StateObject private var dataManager = DataManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(modelData)
+                .environmentObject(dataManager)
                 .onAppear {
-                    modelData.fetchMovies { _ in }
+                    dataManager.fetchMovies { _ in }
                 }
         }
     }
