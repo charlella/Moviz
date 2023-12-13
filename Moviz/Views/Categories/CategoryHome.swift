@@ -15,8 +15,8 @@ struct CategoryHome: View {
     var body: some View {
         NavigationSplitView {
             ScrollView {
-                if let randomMovie = dataManager.movies.randomElement() {
-                    URLImage(URL(string: randomMovie.image.original)!) { image in
+                if let firstMovie = dataManager.movies.first {
+                    URLImage(URL(string: firstMovie.image.original)!) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)

@@ -29,6 +29,7 @@ struct CategoryItem: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.center)
                         .clipped()
+                        .frame(maxWidth: 150)
             //Ajuster le titre pour un retour à la ligne si > à la largeur de l'image
                 }
                 .padding(.leading, 15)
@@ -39,7 +40,7 @@ struct CategoryItem_Previews: PreviewProvider {
     static var previews: some View {
         let dataManager = DataManager()
         dataManager.movies = ModelData().movies
-        return CategoryItem(movie: dataManager.movies[0])
+        return CategoryItem(movie: dataManager.movies[44])
             .environmentObject(DataManager())
     }
 }
