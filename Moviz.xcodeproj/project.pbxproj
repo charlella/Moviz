@@ -18,6 +18,10 @@
 		BA825EFF2B29F02F0067297C /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825EFE2B29F02F0067297C /* SearchItem.swift */; };
 		BA825F012B29F0520067297C /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F002B29F0520067297C /* SearchResults.swift */; };
 		BA825F032B29FAE30067297C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F022B29FAE30067297C /* SearchBar.swift */; };
+		BA825F052B2A1EF70067297C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F042B2A1EF70067297C /* Profile.swift */; };
+		BA825F082B2A1F480067297C /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F072B2A1F480067297C /* ProfileHost.swift */; };
+		BA825F0A2B2A1FA80067297C /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F092B2A1FA80067297C /* ProfileSummary.swift */; };
+		BA825F0C2B2A23270067297C /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F0B2B2A23270067297C /* ProfileEditor.swift */; };
 		BAFE659F2B27474100AAC314 /* MovizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE659E2B27474100AAC314 /* MovizApp.swift */; };
 		BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65A02B27474100AAC314 /* ContentView.swift */; };
 		BAFE65A32B27474300AAC314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFE65A22B27474300AAC314 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 		BA825EFE2B29F02F0067297C /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		BA825F002B29F0520067297C /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		BA825F022B29FAE30067297C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BA825F042B2A1EF70067297C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BA825F072B2A1F480067297C /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
+		BA825F092B2A1FA80067297C /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
+		BA825F0B2B2A23270067297C /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		BAFE659B2B27474100AAC314 /* Moviz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moviz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFE659E2B27474100AAC314 /* MovizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovizApp.swift; sourceTree = "<group>"; };
 		BAFE65A02B27474100AAC314 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +107,16 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		BA825F062B2A1F130067297C /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				BA825F072B2A1F480067297C /* ProfileHost.swift */,
+				BA825F0B2B2A23270067297C /* ProfileEditor.swift */,
+				BA825F092B2A1FA80067297C /* ProfileSummary.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
 		BAFE65922B27474100AAC314 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +165,7 @@
 		BAFE65B52B275D4800AAC314 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA825F062B2A1F130067297C /* Profiles */,
 				BA825EF72B29AC170067297C /* Search */,
 				BA825EF42B29A7FD0067297C /* Categories */,
 				BAFE65A02B27474100AAC314 /* ContentView.swift */,
@@ -163,6 +182,7 @@
 				BAFE65B12B2756C000AAC314 /* Movie.swift */,
 				BA825EEF2B28964B0067297C /* APIResponse.swift */,
 				BA825EF12B2897260067297C /* DataManager.swift */,
+				BA825F042B2A1EF70067297C /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,18 +267,22 @@
 			files = (
 				BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */,
 				BA825EF22B2897260067297C /* DataManager.swift in Sources */,
+				BA825F0A2B2A1FA80067297C /* ProfileSummary.swift in Sources */,
 				BAFE65B82B275E1A00AAC314 /* MovieRow.swift in Sources */,
 				BAFE65AD2B274F7800AAC314 /* rectangleImage.swift in Sources */,
 				BA825EF62B29A8A90067297C /* CategoryHome.swift in Sources */,
 				BAFE65B42B275CF500AAC314 /* ModelData.swift in Sources */,
 				BA825F012B29F0520067297C /* SearchResults.swift in Sources */,
+				BA825F052B2A1EF70067297C /* Profile.swift in Sources */,
 				BA825EFB2B29B1000067297C /* CategoryRow.swift in Sources */,
 				BA825EF92B29AC260067297C /* SearchHome.swift in Sources */,
+				BA825F0C2B2A23270067297C /* ProfileEditor.swift in Sources */,
 				BAFE65B22B2756C000AAC314 /* Movie.swift in Sources */,
 				BA825EFF2B29F02F0067297C /* SearchItem.swift in Sources */,
 				BAFE659F2B27474100AAC314 /* MovizApp.swift in Sources */,
 				BA825EFD2B29B1130067297C /* CategoryItem.swift in Sources */,
 				BA825EEC2B285EE20067297C /* MovieList.swift in Sources */,
+				BA825F082B2A1F480067297C /* ProfileHost.swift in Sources */,
 				BA825EEE2B2869200067297C /* MovieDetail.swift in Sources */,
 				BA825F032B29FAE30067297C /* SearchBar.swift in Sources */,
 				BA825EF02B28964B0067297C /* APIResponse.swift in Sources */,

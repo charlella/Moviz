@@ -10,7 +10,7 @@ import URLImage
 
 struct CategoryHome: View {
     @EnvironmentObject var dataManager: DataManager
-    //Ajouter le profil de l'utilisateur
+    @State private var showingProfile = false
     
     var body: some View {
         NavigationSplitView {
@@ -43,6 +43,19 @@ struct CategoryHome: View {
             }
             .listStyle(.inset)
             .navigationTitle("Home")
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileHost()
+                    .environmentObject(dataManager)
+            }
         } detail: {
             Text("Select a Movie")
         }

@@ -9,7 +9,8 @@ import Foundation
 
 class ModelData: ObservableObject {
     @Published var movies: [Movie] = load("movizData.json")
-    
+    @Published var profile = Profile.default
+
 }
 
 

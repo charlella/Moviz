@@ -12,6 +12,7 @@ class DataManager: ObservableObject {
     @Published var favoriteMovieIDs: Set<Int> = []
     @Published var genres: [String: [Movie]] = [:]
     @Published var searchResults: [Movie] = []
+    @Published var profile = Profile.default
 
     func toggleFavorite(movie: Movie) {
             if favoriteMovieIDs.contains(movie.id) {
