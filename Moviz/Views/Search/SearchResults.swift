@@ -14,18 +14,19 @@ struct SearchResults: View {
         var body: some View {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .center) {
-                    ForEach(dataManager.movies, id: \.id) { movie in
-                        NavigationLink(destination: MovieDetail(movie: movie)) {
-                            SearchItem(movie: movie)
-                                .padding(.vertical, 2)
+                    ForEach(dataManager.searchResults, id: \.id) { movie in
+                    NavigationLink(destination: MovieDetail(movie: movie)) {
+                        SearchItem(movie: movie)
+                            .padding(.top, 12)
+                            .padding(.bottom, 12)
                         }
                     }
                 }
-                .padding(.horizontal)
-                Spacer()
+                .padding(.trailing, 15)
+                //Spacer()
                 
             }
-            .navigationTitle("Search Results")
+            .navigationTitle("Search")
         }
     }
 
