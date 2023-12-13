@@ -40,26 +40,15 @@ struct SearchHome: View {
                 let lowercasedName = movie.name.lowercased()
                 let lowercasedSearchText = searchText.lowercased()
                 
-                return containsExactOrder(substring: lowercasedSearchText, in: lowercasedName)
+                return containsSearchText(lowercasedSearchText, in: lowercasedName)
             }
             
             dataManager.searchResults = filteredMovies
         }
     }
     
-    private func containsExactOrder(substring: String, in text: String) -> Bool {
-        var substringIndex = substring.startIndex
-        
-        for char in text {
-            guard substringIndex < substring.endIndex else {
-                return true
-            }
-            
-            if char == substring[substringIndex] {
-                substringIndex = substring.index(after: substringIndex)
-            }
-        }
-                return substringIndex == substring.endIndex
+    private func containsSearchText(_ searchText: String, in movieName: String) -> Bool {
+        return movieName.lowercased().contains(searchText.lowercased())
     }
 }
 
