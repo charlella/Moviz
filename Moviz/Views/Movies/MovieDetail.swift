@@ -8,6 +8,12 @@
 import SwiftUI
 import URLImage
 
+extension String {
+    func removingHTMLTags() -> String {
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
+}
+
 struct MovieDetail: View {
     @EnvironmentObject var dataManager: DataManager
     var movie: Movie
@@ -57,7 +63,7 @@ struct MovieDetail: View {
                     .font(.title3)
                     .fontWeight(.bold)
                 
-                Text(movie.summary)
+                Text(movie.summary.removingHTMLTags())
                     .font(.body)
             }
             .padding()
