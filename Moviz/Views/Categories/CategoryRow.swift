@@ -17,6 +17,7 @@ struct CategoryRow: View {
         VStack(alignment: .leading) {
             Text(categoryName)
                 .font(.title)
+                .foregroundColor(.primary)
                 .padding(.leading, 15)
                 .padding(.bottom, 5)
                 .padding(.top, 20)

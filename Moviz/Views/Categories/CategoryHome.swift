@@ -14,21 +14,21 @@ struct CategoryHome: View {
     
     var body: some View {
         NavigationSplitView {
-            // Affichage de l'image du prochain film
-            if let nextMovie = dataManager.movies.first {
-                URLImage(URL(string: nextMovie.image.original)!) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 300)
-                        .clipped()
-                        .listRowInsets(EdgeInsets())
+            ScrollView {
+                if let randomMovie = dataManager.movies.randomElement() {
+                    URLImage(URL(string: randomMovie.image.original)!) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 300)
+                            .clipped()
+                            .listRowInsets(EdgeInsets())
+                    }
+                    .padding(.bottom, 2)
+                    .rectangleImageStyle()
                 }
-                .padding(.bottom, 20)
-            }
-            
-            // Liste des genres de films
-            List {
+                
+                // Liste des genres de films
                 ForEach(dataManager.genres.keys.sorted(), id: \.self) { key in
                     if let moviesForCategory = dataManager.genres[key] {
                         let moviesForCategoryWithGenres = moviesForCategory.filter { !$0.genres.isEmpty }

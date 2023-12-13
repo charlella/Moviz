@@ -27,20 +27,22 @@ struct MovieRow: View {
                             )
                             .shadow(radius: 7)
                     }
-                    Spacer()
+                    .padding(.trailing)
                     VStack(alignment: .leading)  {
-                        Text(movie.name)
-                            .font(.title3.bold())
+                        HStack {
+                            Text(movie.name)
+                                .font(.title3.bold())
+                            if dataManager.isFavorite(movie: movie) {
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.yellow)
+                                    .padding(.trailing, 10)
+                                           }
+                        }
                         Text(movie.genres.joined(separator: ", "))
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
                     Spacer()
-                    if dataManager.isFavorite(movie: movie) {
-                                       Image(systemName: "heart.fill")
-                                           .foregroundColor(.red)
-                                           .padding(.trailing, 10)
-                                   }
                 }
             }
         }

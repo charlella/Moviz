@@ -22,10 +22,14 @@ struct MovieDetail: View {
             }
             .rectangleImageStyle()
             VStack(alignment: .leading) {
-                Text(movie.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                
+                HStack {
+                    Text(movie.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                Image(systemName: dataManager.isFavorite(movie: movie) ? "star.fill" : "star")
+                        .foregroundColor(dataManager.isFavorite(movie: movie) ? .yellow : .gray)
+                        .padding(.trailing, 10)
+                }
                 HStack {
                     Text(movie.genres.joined(separator: ", "))
                         .font(.subheadline)
@@ -56,9 +60,6 @@ struct MovieDetail: View {
                     .font(.body)
             }
             .padding()
-            Image(systemName: dataManager.isFavorite(movie: movie) ? "heart.fill" : "heart")
-                        .foregroundColor(dataManager.isFavorite(movie: movie) ? .red : .gray)
-                        .padding(.trailing, 10)
         }
         .onTapGesture {
                   dataManager.toggleFavorite(movie: movie)

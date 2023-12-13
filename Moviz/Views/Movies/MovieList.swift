@@ -13,9 +13,9 @@ struct MovieList: View {
 
 var body: some View {
     NavigationSplitView {
+        Toggle("Show Favorites Only", isOn: $showFavoritesOnly)
+            .padding()
         List {
-            Toggle("Show Favorites Only", isOn: $showFavoritesOnly)
-                .padding()
             ForEach(filteredMovies) { movie in
                 NavigationLink(
                     destination: MovieDetail(movie: movie),
