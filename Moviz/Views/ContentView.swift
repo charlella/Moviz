@@ -12,17 +12,16 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-                    NavigationView {
                         CategoryHome()
-                    }
+                            .environmentObject(dataManager)
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
                     .tag(Tab.home)
 
-                    NavigationView {
+                    //NavigationView {
                         SearchHome()
-                    }
+                    //}
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }

@@ -30,25 +30,39 @@ struct CategoryHome: View {
             // Liste des genres de films
             List {
                 ForEach(dataManager.genres.keys.sorted(), id: \.self) { key in
-                        let moviesForCategory = dataManager.genres[key]!.filter { !$0.genres.isEmpty }
-                                    
-                            if !moviesForCategory.isEmpty {
-                                NavigationLink(destination: CategoryRow(categoryName: key, items: moviesForCategory)) {
-                                    CategoryRow(categoryName: key, items: moviesForCategory)
-                                        }
-                                        .listRowInsets(EdgeInsets())
-                                    }
-                                }
+                    if let moviesForCategory = dataManager.genres[key] {
+                        let moviesForCategoryWithGenres = moviesForCategory.filter { !$0.genres.isEmpty }
+                        if !moviesForCategoryWithGenres.isEmpty {
+                            NavigationLink(destination: CategoryRow(categoryName: key, items: moviesForCategoryWithGenres)) {
+                                CategoryRow(categoryName: key, items: moviesForCategoryWithGenres)
                             }
+                            .listRowInsets(EdgeInsets())
+                        }
+                    }
+                }
+            }
             .listStyle(.inset)
             .navigationTitle("Home")
         } detail: {
             Text("Select a Movie")
         }
+        .onAppear {
+            loadData()
+        }
+    }
+    
+    
+    private func loadData() {
+        dataManager.fetchMovies { _ in
+        }
     }
 }
 
 struct CategoryHome_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CategoryHome()
+//            .environmentObject(DataManager())
+//    }
     static var previews: some View {
         let movies = ModelData().movies
         let dataManager = DataManager()

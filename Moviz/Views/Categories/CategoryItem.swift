@@ -24,6 +24,7 @@ struct CategoryItem: View {
                     Text(movie.name)
                         .foregroundStyle(.primary)
                         .font(.title3)
+                        .foregroundColor(.primary)
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.center)

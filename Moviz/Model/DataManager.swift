@@ -36,6 +36,7 @@ class DataManager: ObservableObject {
 
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
+                print("Error fetching data:", error?.localizedDescription ?? "Unknown error")
                 completion(nil)
                 return
             }
@@ -44,6 +45,8 @@ class DataManager: ObservableObject {
                 let movies = try JSONDecoder().decode([Movie].self, from: data)
                 DispatchQueue.main.async {
                     self.movies = movies
+                    self.genres = Dictionary(grouping: movies, by: { $0.genres.first ?? "" })
+                    print("Movies loaded successfully:", movies)
                     completion(movies)
                 }
             } catch {
