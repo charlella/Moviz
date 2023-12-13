@@ -2,34 +2,42 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataManager: DataManager
-    @State private var showFavoritesOnly = false
+    @State private var selection: Tab = .home
 
+    enum Tab {
+            case home
+            case search
+            case list
+        }
+    
     var body: some View {
-        NavigationSplitView {
-            Toggle("Show Favorites Only", isOn: $showFavoritesOnly)
-                .padding()
-            List {
-                ForEach(filteredMovies) { movie in
-                    NavigationLink(
-                        destination: MovieDetail(movie: movie),
-                        label: {
-                            MovieRow(movie: movie)
+        TabView(selection: $selection) {
+                    NavigationView {
+                        CategoryHome()
+                    }
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                    .tag(Tab.home)
+
+                    NavigationView {
+                        SearchHome()
+                    }
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
+                    .tag(Tab.search)
+
+                    MovieList()
+                        .tabItem {
+                            Label("List", systemImage: "list.bullet")
                         }
-                    )
+                        .tag(Tab.list)
+                }
+                .onAppear {
+                    loadData()
                 }
             }
-            .navigationTitle("Movies")
-        } detail: {
-            Text("Select a Movie")
-        }
-        .onAppear {
-            loadData()
-        }
-    }
-
-    private var filteredMovies: [Movie] {
-        return showFavoritesOnly ? dataManager.favoriteMovies : dataManager.movies
-    }
 
     private func loadData() {
         dataManager.fetchMovies { _ in }

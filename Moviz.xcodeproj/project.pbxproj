@@ -12,6 +12,7 @@
 		BA825EF02B28964B0067297C /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825EEF2B28964B0067297C /* APIResponse.swift */; };
 		BA825EF22B2897260067297C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825EF12B2897260067297C /* DataManager.swift */; };
 		BA825EF62B29A8A90067297C /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825EF52B29A8A90067297C /* CategoryHome.swift */; };
+		BA825EF92B29AC260067297C /* SearchHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825EF82B29AC260067297C /* SearchHome.swift */; };
 		BAFE659F2B27474100AAC314 /* MovizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE659E2B27474100AAC314 /* MovizApp.swift */; };
 		BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65A02B27474100AAC314 /* ContentView.swift */; };
 		BAFE65A32B27474300AAC314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFE65A22B27474300AAC314 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		BA825EEF2B28964B0067297C /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		BA825EF12B2897260067297C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BA825EF52B29A8A90067297C /* CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
+		BA825EF82B29AC260067297C /* SearchHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHome.swift; sourceTree = "<group>"; };
 		BAFE659B2B27474100AAC314 /* Moviz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moviz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFE659E2B27474100AAC314 /* MovizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovizApp.swift; sourceTree = "<group>"; };
 		BAFE65A02B27474100AAC314 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 				BA825EF52B29A8A90067297C /* CategoryHome.swift */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		BA825EF72B29AC170067297C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BA825EF82B29AC260067297C /* SearchHome.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		BAFE65922B27474100AAC314 = {
@@ -122,6 +132,7 @@
 		BAFE65B52B275D4800AAC314 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA825EF72B29AC170067297C /* Search */,
 				BA825EF42B29A7FD0067297C /* Categories */,
 				BAFE65A02B27474100AAC314 /* ContentView.swift */,
 				BAFE65AC2B274F7800AAC314 /* rectangleImage.swift */,
@@ -225,6 +236,7 @@
 				BAFE65AD2B274F7800AAC314 /* rectangleImage.swift in Sources */,
 				BA825EF62B29A8A90067297C /* CategoryHome.swift in Sources */,
 				BAFE65B42B275CF500AAC314 /* ModelData.swift in Sources */,
+				BA825EF92B29AC260067297C /* SearchHome.swift in Sources */,
 				BAFE65B22B2756C000AAC314 /* Movie.swift in Sources */,
 				BAFE659F2B27474100AAC314 /* MovizApp.swift in Sources */,
 				BA825EEC2B285EE20067297C /* MovieList.swift in Sources */,
