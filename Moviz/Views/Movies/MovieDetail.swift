@@ -29,6 +29,7 @@ struct MovieDetail: View {
                 Image(systemName: dataManager.isFavorite(movie: movie) ? "star.fill" : "star")
                         .foregroundColor(dataManager.isFavorite(movie: movie) ? .yellow : .gray)
                         .padding(.trailing, 10)
+                        .font(.title)
                 }
                 HStack {
                     Text(movie.genres.joined(separator: ", "))
