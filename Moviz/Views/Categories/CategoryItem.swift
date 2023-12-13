@@ -23,7 +23,12 @@ struct CategoryItem: View {
             }
                     Text(movie.name)
                         .foregroundStyle(.primary)
-                        .font(.subheadline)
+                        .font(.title3)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.center)
+                        .clipped()
+            //Ajuster le titre pour un retour à la ligne si > à la largeur de l'image
                 }
                 .padding(.leading, 15)
     }

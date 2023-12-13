@@ -10,6 +10,7 @@ import Foundation
 class DataManager: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var favoriteMovieIDs: Set<Int> = []
+    @Published var genres: [String: [Movie]] = [:]
 
     func toggleFavorite(movie: Movie) {
             if favoriteMovieIDs.contains(movie.id) {
