@@ -30,7 +30,6 @@ struct CategoryItem: View {
                         .multilineTextAlignment(.center)
                         .clipped()
                         .frame(maxWidth: 150)
-            //Ajuster le titre pour un retour à la ligne si > à la largeur de l'image
                 }
                 .padding(.leading, 15)
     }
@@ -43,6 +42,5 @@ struct CategoryItem_Previews: PreviewProvider {
         return CategoryItem(movie: dataManager.movies[44])
             .environmentObject(DataManager())
             .preferredColorScheme(.dark)
-
     }
 }

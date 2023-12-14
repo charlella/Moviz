@@ -46,7 +46,7 @@ struct MovieDetail: View {
                         Text(String(format: "Rating: %.1f", rating))
                                 .font(.subheadline)
                                 .fontWeight(.bold)
-                                        }
+                    }
                 }
                 
                 HStack {
@@ -71,14 +71,12 @@ struct MovieDetail: View {
         }
         .onTapGesture {
                   dataManager.toggleFavorite(movie: movie)
-              }
-//        .background(Color.background)
-//        .ignoresSafeArea()
+        }
         .background(
-                        Image("Background")
-                            .resizable()
-                            .ignoresSafeArea()
-                            .aspectRatio(contentMode: .fill)
+            Image("Background")
+                .resizable()
+                .ignoresSafeArea()
+                .aspectRatio(contentMode: .fill)
         )
     }
 }
@@ -90,6 +88,5 @@ struct MovieDetail_Previews: PreviewProvider {
         return MovieDetail(movie: dataManager.movies[0])
             .environmentObject(DataManager())
             .preferredColorScheme(.dark)
-
     }
 }

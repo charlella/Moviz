@@ -42,7 +42,6 @@ struct ProfileHost: View {
 
             }
         }
-        //.background(Color.background)
         .padding()
     }
 }

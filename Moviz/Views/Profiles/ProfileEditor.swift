@@ -38,7 +38,6 @@ struct ProfileEditor: View {
                     Text("Goal Date")
                 }
             }
-            //.background(Color.background)
         }
     }
 

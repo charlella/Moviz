@@ -28,7 +28,6 @@ struct CategoryHome: View {
                     .rectangleImageStyle()
                 }
                 
-                // Liste des genres de films
                 ForEach(dataManager.genres.keys.sorted(), id: \.self) { key in
                     if let moviesForCategory = dataManager.genres[key] {
                         let moviesForCategoryWithGenres = moviesForCategory.filter { !$0.genres.isEmpty }
@@ -42,7 +41,6 @@ struct CategoryHome: View {
                 }
             }
             .listStyle(.inset)
-           // .navigationTitle("Home")
             .toolbar {
                 Button {
                     showingProfile.toggle()
@@ -56,8 +54,6 @@ struct CategoryHome: View {
                 ProfileHost()
                     .environmentObject(dataManager)
                     .preferredColorScheme(.dark)
-                    //.background(Image("Background 1"))
-                    //.background(Color.background)
             }
             .background(Color.background)
         } detail: {
@@ -76,10 +72,6 @@ struct CategoryHome: View {
 }
 
 struct CategoryHome_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CategoryHome()
-//            .environmentObject(DataManager())
-//    }
     static var previews: some View {
         let movies = ModelData().movies
         let dataManager = DataManager()

@@ -45,7 +45,7 @@ var body: some View {
                     .listStyle(PlainListStyle())
                 }
             }
-            .background(Color.background) // Apply background color to the VStack
+            .background(Color.background)
             .navigationTitle("Movies")
         }
     }
@@ -71,7 +71,6 @@ struct MovieList_Previews: PreviewProvider {
         MovieList()
             .environmentObject(DataManager())
             .preferredColorScheme(.dark)
-
     }
 }
 

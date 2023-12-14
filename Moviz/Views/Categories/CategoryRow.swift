@@ -53,15 +53,3 @@ struct CategoryRow_Previews: PreviewProvider {
 
     }
 }
-// Row static avec ModelData
-//    static var previews: some View {
-//        let movies = ModelData().movies
-//        return CategoryRow(
-//            categoryName: movies[0].genres.first ?? "",
-//            items: movies
-//            //Pour afficher 4 films
-//            //items: Array(movies.prefix(4))
-//        )
-//        .environmentObject(DataManager())
-//    }
-//}

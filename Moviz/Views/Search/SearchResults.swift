@@ -23,8 +23,6 @@ struct SearchResults: View {
                     }
                 }
                 .padding(.trailing, 15)
-                //Spacer()
-                
             }
             .navigationTitle("Search")
         }
@@ -41,8 +39,4 @@ struct SearchResults: View {
                 .preferredColorScheme(.dark)
 
         }
-//        static var previews: some View {
-//            SearchResults()
-//                .environmentObject(DataManager())
-//        }
     }

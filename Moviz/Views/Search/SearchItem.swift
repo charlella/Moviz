@@ -29,7 +29,6 @@ struct SearchItem: View {
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.center)
                         .clipped()
-            //Ajuster le titre pour un retour à la ligne si > à la largeur de l'image
                 }
                 .padding(.leading, 15)
     }
@@ -43,6 +42,5 @@ struct SearchItem_Previews: PreviewProvider {
         return SearchItem(movie: dataManager.movies[0])
             .environmentObject(DataManager())
             .preferredColorScheme(.dark)
-
     }
 }

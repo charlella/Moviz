@@ -38,16 +38,17 @@ struct Movie: Hashable, Codable, Identifiable {
         var medium: String
         var original: String
     }
+    
     struct Network: Codable, Hashable {
-           var id: Int
-           var name: String
-           var country: Country
-           var officialSite: String?
+        var id: Int
+        var name: String
+        var country: Country
+        var officialSite: String?
 
-           struct Country: Codable, Hashable {
-               var name: String
-               var code: String
-               var timezone: String
-           }
-       }
+        struct Country: Codable, Hashable {
+            var name: String
+            var code: String
+            var timezone: String
+        }
+    }
 }
