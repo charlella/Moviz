@@ -25,12 +25,13 @@ struct SearchHome: View {
                     SearchResults()
                 } else {
                     Text("Enter a search term")
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white)
                         .padding()
                     Spacer()
                 }
             }
             .navigationTitle("Search")
+            .background(Color.background)
         }
     }
     
@@ -56,5 +57,7 @@ struct SearchHome_Previews: PreviewProvider {
     static var previews: some View {
         SearchHome()
             .environmentObject(DataManager())
+            .preferredColorScheme(.dark)
+
     }
 }

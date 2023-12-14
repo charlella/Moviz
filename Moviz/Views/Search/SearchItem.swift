@@ -42,5 +42,7 @@ struct SearchItem_Previews: PreviewProvider {
         dataManager.movies = ModelData().movies
         return SearchItem(movie: dataManager.movies[0])
             .environmentObject(DataManager())
+            .preferredColorScheme(.dark)
+
     }
 }

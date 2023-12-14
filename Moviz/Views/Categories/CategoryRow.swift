@@ -49,6 +49,8 @@ struct CategoryRow_Previews: PreviewProvider {
             items: movies
         )
         .environmentObject(dataManager)
+        .preferredColorScheme(.dark)
+
     }
 }
 // Row static avec ModelData

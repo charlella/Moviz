@@ -13,20 +13,43 @@ struct MovieList: View {
 
 var body: some View {
     NavigationSplitView {
-        Toggle("Show Favorites Only", isOn: $showFavoritesOnly)
-            .padding()
-        List {
-            ForEach(filteredMovies) { movie in
-                NavigationLink(
-                    destination: MovieDetail(movie: movie),
-                    label: {
-                        MovieRow(movie: movie)
+        VStack(spacing: 0) {
+            Toggle("Show Favorites Only", isOn: $showFavoritesOnly)
+                .padding()
+                .toggleStyle(SwitchToggleStyle(tint: .purple))
+                .zIndex(1)
+                .background(Color.background)
+
+            VStack {
+                if filteredMovies.isEmpty {
+                    Spacer()
+                    Text("No Favorite Movie")
+                        .font(.title3)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                    Spacer()
+                } else {
+                    List {
+                        ForEach(filteredMovies) { movie in
+                            NavigationLink(
+                                destination: MovieDetail(movie: movie),
+                                label: {
+                                    MovieRow(movie: movie)
+                                }
+                            )
+                            .listRowBackground(Color.background)
+                            .listRowSeparatorTint(Color.white)
+                        }
                     }
-                )
+                    .listStyle(PlainListStyle())
+                }
             }
+            .background(Color.background) // Apply background color to the VStack
+            .navigationTitle("Movies")
         }
-        .navigationTitle("Movies")
-    } detail: {
+    }
+    detail: {
         Text("Select a Movie")
     }
     .onAppear {
@@ -47,6 +70,8 @@ struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
         MovieList()
             .environmentObject(DataManager())
+            .preferredColorScheme(.dark)
+
     }
 }
 

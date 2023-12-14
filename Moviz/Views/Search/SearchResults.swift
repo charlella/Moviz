@@ -38,6 +38,8 @@ struct SearchResults: View {
 
             return SearchResults()
                 .environmentObject(dataManager)
+                .preferredColorScheme(.dark)
+
         }
 //        static var previews: some View {
 //            SearchResults()

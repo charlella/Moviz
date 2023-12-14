@@ -66,11 +66,20 @@ struct MovieDetail: View {
                 Text(movie.summary.removingHTMLTags())
                     .font(.body)
             }
-            .padding()
+            .padding(.horizontal, 20)
+            .padding(.vertical, 30)
         }
         .onTapGesture {
                   dataManager.toggleFavorite(movie: movie)
               }
+//        .background(Color.background)
+//        .ignoresSafeArea()
+        .background(
+                        Image("Background")
+                            .resizable()
+                            .ignoresSafeArea()
+                            .aspectRatio(contentMode: .fill)
+        )
     }
 }
 
@@ -80,5 +89,7 @@ struct MovieDetail_Previews: PreviewProvider {
         dataManager.movies = ModelData().movies
         return MovieDetail(movie: dataManager.movies[0])
             .environmentObject(DataManager())
+            .preferredColorScheme(.dark)
+
     }
 }

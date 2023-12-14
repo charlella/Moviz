@@ -22,6 +22,7 @@
 		BA825F082B2A1F480067297C /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F072B2A1F480067297C /* ProfileHost.swift */; };
 		BA825F0A2B2A1FA80067297C /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F092B2A1FA80067297C /* ProfileSummary.swift */; };
 		BA825F0C2B2A23270067297C /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA825F0B2B2A23270067297C /* ProfileEditor.swift */; };
+		BABEF1C82B2AFBE2004F6A1E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABEF1C72B2AFBE2004F6A1E /* Extensions.swift */; };
 		BAFE659F2B27474100AAC314 /* MovizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE659E2B27474100AAC314 /* MovizApp.swift */; };
 		BAFE65A12B27474100AAC314 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE65A02B27474100AAC314 /* ContentView.swift */; };
 		BAFE65A32B27474300AAC314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFE65A22B27474300AAC314 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		BA825F072B2A1F480067297C /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		BA825F092B2A1FA80067297C /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		BA825F0B2B2A23270067297C /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		BABEF1C72B2AFBE2004F6A1E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAFE659B2B27474100AAC314 /* Moviz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moviz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFE659E2B27474100AAC314 /* MovizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovizApp.swift; sourceTree = "<group>"; };
 		BAFE65A02B27474100AAC314 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			path = Profiles;
 			sourceTree = "<group>";
 		};
+		BABEF1C62B2AFB94004F6A1E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BABEF1C72B2AFBE2004F6A1E /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		BAFE65922B27474100AAC314 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		BAFE659D2B27474100AAC314 /* Moviz */ = {
 			isa = PBXGroup;
 			children = (
+				BABEF1C62B2AFB94004F6A1E /* Utils */,
 				BAFE659E2B27474100AAC314 /* MovizApp.swift */,
 				BAFE65B52B275D4800AAC314 /* Views */,
 				BAFE65B62B275D6A00AAC314 /* Model */,
@@ -274,6 +285,7 @@
 				BAFE65B42B275CF500AAC314 /* ModelData.swift in Sources */,
 				BA825F012B29F0520067297C /* SearchResults.swift in Sources */,
 				BA825F052B2A1EF70067297C /* Profile.swift in Sources */,
+				BABEF1C82B2AFBE2004F6A1E /* Extensions.swift in Sources */,
 				BA825EFB2B29B1000067297C /* CategoryRow.swift in Sources */,
 				BA825EF92B29AC260067297C /* SearchHome.swift in Sources */,
 				BA825F0C2B2A23270067297C /* ProfileEditor.swift in Sources */,

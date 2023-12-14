@@ -20,22 +20,29 @@ struct ProfileHost: View {
                         draftProfile = dataManager.profile
                         editMode?.animation().wrappedValue = .inactive
                     }
+                    .foregroundColor(Color.secondary)
                 }
                 Spacer()
                 EditButton()
+                    .foregroundColor(Color.primary)
             }
             if editMode?.wrappedValue == .inactive {
                 ProfileSummary(profile: dataManager.profile)
+                    //.background(Color.background)
+                    
             } else {
                 ProfileEditor(profile: $draftProfile)
+                    .background(Color.background)
                     .onAppear {
                         draftProfile = dataManager.profile
                     }
                     .onDisappear {
                         dataManager.profile = draftProfile
                     }
+
             }
         }
+        //.background(Color.background)
         .padding()
     }
 }
@@ -44,5 +51,6 @@ struct ProfileHost_Previews: PreviewProvider {
     static var previews: some View {
         ProfileHost()
            .environmentObject(DataManager())
+           //.preferredColorScheme(.dark)
     }
 }

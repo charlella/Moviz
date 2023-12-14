@@ -42,22 +42,26 @@ struct CategoryHome: View {
                 }
             }
             .listStyle(.inset)
-            .navigationTitle("Home")
+           // .navigationTitle("Home")
             .toolbar {
                 Button {
                     showingProfile.toggle()
                 } label: {
                     Label("User Profile", systemImage: "person.crop.circle")
                         .font(.title)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color("Tab Bar Border"))
                 }
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileHost()
                     .environmentObject(dataManager)
+                    .preferredColorScheme(.dark)
+                    //.background(Image("Background 1"))
+                    //.background(Color.background)
             }
+            .background(Color.background)
         } detail: {
-            Text("Select a Movie")
+                Text("Select a Movie")
         }
         .onAppear {
             loadData()
@@ -84,5 +88,6 @@ struct CategoryHome_Previews: PreviewProvider {
 
         return CategoryHome()
             .environmentObject(dataManager)
+            .preferredColorScheme(.dark)
     }
 }

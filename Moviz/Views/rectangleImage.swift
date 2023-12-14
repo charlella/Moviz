@@ -13,7 +13,7 @@ struct RectangleImage: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: 25.0))
             .overlay(
                 RoundedRectangle(cornerRadius: 25.0)
-                    .stroke(Color.white, lineWidth: 4)
+                    .stroke(Color.movieCardBorder, lineWidth: 4)
             )
             .shadow(radius: 7)
     }

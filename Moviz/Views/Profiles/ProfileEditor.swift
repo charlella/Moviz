@@ -28,6 +28,7 @@ struct ProfileEditor: View {
                 Toggle(isOn: $profile.prefersNotifications) {
                     Text("Enable Notifications")
                 }
+                .toggleStyle(SwitchToggleStyle(tint: .purple))
                 Picker("Seasonal Photo", selection: $profile.seasonalPhoto) {
                     ForEach(Profile.Season.allCases) { season in
                         Text(season.rawValue).tag(season)
@@ -37,6 +38,7 @@ struct ProfileEditor: View {
                     Text("Goal Date")
                 }
             }
+            //.background(Color.background)
         }
     }
 
@@ -45,5 +47,6 @@ struct ProfileEditor: View {
 struct ProfileEditor_Previews: PreviewProvider {
     static var previews: some View {
         ProfileEditor(profile: .constant(.default))
+           //.preferredColorScheme(.dark)
     }
 }

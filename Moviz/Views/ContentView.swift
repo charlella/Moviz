@@ -11,30 +11,31 @@ struct ContentView: View {
         }
     
     var body: some View {
-        TabView(selection: $selection) {
-                        CategoryHome()
-                            .environmentObject(dataManager)
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                    .tag(Tab.home)
-
-                    //NavigationView {
-                        SearchHome()
-                    //}
-                    .tabItem {
-                        Label("Search", systemImage: "magnifyingglass")
-                    }
-                    .tag(Tab.search)
-
-                    MovieList()
+        VStack(spacing: 0) {
+            TabView(selection: $selection) {
+                            CategoryHome()
+                                .environmentObject(dataManager)
                         .tabItem {
-                            Label("List", systemImage: "list.bullet")
+                            Label("Home", systemImage: "house")
                         }
-                        .tag(Tab.list)
-                }
-                .onAppear {
-                    loadData()
+                        .tag(Tab.home)
+
+                            SearchHome()
+                        .tabItem {
+                            Label("Search", systemImage: "magnifyingglass")
+                        }
+                        .tag(Tab.search)
+
+                        MovieList()
+                            .tabItem {
+                                Label("List", systemImage: "list.bullet")
+                            }
+                            .tag(Tab.list)
+                    }
+                    .accentColor(Color("Rating Text"))
+                    .onAppear {
+                        loadData()
+                    }
                 }
             }
 
@@ -47,5 +48,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(DataManager())
+            .preferredColorScheme(.dark)
     }
 }

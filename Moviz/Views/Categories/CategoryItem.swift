@@ -42,5 +42,7 @@ struct CategoryItem_Previews: PreviewProvider {
         dataManager.movies = ModelData().movies
         return CategoryItem(movie: dataManager.movies[44])
             .environmentObject(DataManager())
+            .preferredColorScheme(.dark)
+
     }
 }

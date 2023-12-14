@@ -12,16 +12,19 @@ struct ProfileSummary: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .center, spacing: 10) {
                 Text("Hello \(profile.username)")
                     .bold()
                     .font(.title)
                     .padding(.top, 50)
 
-
-                Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
-                Text("Seasonal Photos: \(profile.seasonalPhoto.rawValue)")
-                Text("Goal Date: ") + Text(profile.goalDate, style: .date)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
+                    Text("Seasonal Photos: \(profile.seasonalPhoto.rawValue)")
+                    Text("Goal Date: ") + Text(profile.goalDate, style: .date)
+                }
+                .padding(.top, 50)
+                .padding(.horizontal,20)
             }
         }
     }
@@ -30,5 +33,7 @@ struct ProfileSummary: View {
 struct ProfileSummary_Previews: PreviewProvider {
     static var previews: some View {
         ProfileSummary(profile: Profile.default)
+            //.preferredColorScheme(.dark)
+
     }
 }

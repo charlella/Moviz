@@ -23,9 +23,9 @@ struct MovieRow: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20.0))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20.0)
-                                    .stroke(Color.white, lineWidth: 4)
+                                    .stroke(Color.white, lineWidth: 2)
                             )
-                            .shadow(radius: 7)
+                            .shadow(color: .purple, radius: 2)
                     }
                     .padding(.trailing)
                     VStack(alignment: .leading)  {
@@ -44,6 +44,7 @@ struct MovieRow: View {
                     }
                     Spacer()
                 }
+                .background(Color.background)
             }
         }
     }
@@ -57,6 +58,7 @@ struct MovieRow: View {
             return Group {
                 MovieRow(movie: dataManager.movies[0])
                     .environmentObject(DataManager())
+                    .preferredColorScheme(.dark)
             }
         }
     }
