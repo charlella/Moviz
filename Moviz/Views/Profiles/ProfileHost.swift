@@ -51,6 +51,6 @@ struct ProfileHost_Previews: PreviewProvider {
     static var previews: some View {
         ProfileHost()
            .environmentObject(DataManager())
-           //.preferredColorScheme(.dark)
+           .preferredColorScheme(.dark)
     }
 }

@@ -47,6 +47,6 @@ struct ProfileEditor: View {
 struct ProfileEditor_Previews: PreviewProvider {
     static var previews: some View {
         ProfileEditor(profile: .constant(.default))
-           //.preferredColorScheme(.dark)
+           .preferredColorScheme(.dark)
     }
 }
