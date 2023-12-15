@@ -27,11 +27,19 @@ git clone https://github.com/charlella/moviz.git
 ```bash
 cd moviz
 ```
-
-<h2>Demo Video</h2>
-Check out the demo video to see Moviz Explorer in action : https://youtu.be/LpIjVsz9rEM 
-
 <h3>API</h3>
 This application uses the TVMaze API to fetch movie data. You can access the API documentation here : https://www.tvmaze.com/api
+
+<h2>Demo Video and Photos</h2>
+Check out the demo video to see Moviz Explorer in action : https://youtu.be/LpIjVsz9rEM 
+
+Here are pictures :
+<br>
+<img src="Photos_Moviz/Moviz_01.png" width="250">
+<img src="Photos_Moviz/Moviz_02.png" width="250">
+<img src="Photos_Moviz/Moviz_06.png" width="250">
+<img src="Photos_Moviz/Moviz_09.png" width="250">
+<img src="Photos_Moviz/Moviz_11.png" width="250">
+<img src="Photos_Moviz/Moviz_12.png" width="250">
 
 
