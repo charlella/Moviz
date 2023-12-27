@@ -20,12 +20,22 @@ struct MovieDetail: View {
     
     var body: some View {
         VStack {
-            URLImage(URL(string: movie.image.medium)!) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 300)
-            }
+            AsyncImage(url: URL(string: movie.image.medium)) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 300)
+                } else if phase.error != nil {
+                    Image(systemName: "exclamationmark.triangle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 300)
+                        .foregroundColor(.red)
+                } else {
+                    ProgressView()
+                    }
+                }
             .rectangleImageStyle()
             VStack(alignment: .leading) {
                 HStack {
